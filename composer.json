@@ -1,5 +1,5 @@
 {
-    "name": "mediamaisteri/moodle-installer",
+    "name": "ghofman/moodle-installer",
     "type": "composer-plugin",
     "require": {
         "composer-plugin-api": "^1.0"
