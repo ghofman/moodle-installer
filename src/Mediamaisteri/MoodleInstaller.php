@@ -12,11 +12,11 @@ use Composer\Installer\LibraryInstaller;
  *  - composer.json
  *  - composer.lock
  *  - vendor/
- *  - web/
+ *  - moodle/
  *
- * Moodle root will be located in the web/ directory, and it's
+ * Moodle root will be located in the moodle/ directory, and it's
  * plugins in corresponding type specific subdirectories such
- * as web/mod/ and web/local/.
+ * as moodle/mod/ and moodle/local/.
  */
 class MoodleInstaller extends LibraryInstaller {
 
@@ -27,7 +27,7 @@ class MoodleInstaller extends LibraryInstaller {
         $prettyName = $package->getPrettyName();
 
         if ($prettyName == 'moodle/moodle') {
-            return 'web/';
+            return 'moodle/';
         }
 
         if (strpos($prettyName, '/') !== false) {
@@ -46,7 +46,7 @@ class MoodleInstaller extends LibraryInstaller {
 
         $pluginType = str_replace('moodle-', '', $package->getType());
 
-        return 'web/' . $this->templatePath($this->locations[$pluginType], $availableVars);
+        return 'moodle/' . $this->templatePath($this->locations[$pluginType], $availableVars);
     }
 
     /**
